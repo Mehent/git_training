@@ -1,20 +1,32 @@
-class Person():
+class Person:
+    def __init__(self, city, address, phone_number):
+        self._city = city
+        self._address = address
+        self._phone_number = phone_number
 
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+    @property
+    def city(self, _default = None):
+        return self._city
 
-    def get_name(self):
-        return self.name
+    @city.setter
+    def city(self, value):
+        self._city = value
 
-    def set_name(self, name):
-        self.name = name
+    @property
+    def address(self):
+        return self._address
 
-    def get_age(self):
-        return self.age
+    @address.setter
+    def address(self, value):
+        self._address = value
 
-    def set_age(self, age):
-        self.age = age
-    
+    @property
+    def phone_number(self, _default=None):
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, value):
+        self._phone_number = value
+
     def __str__(self):
-        return f'Henkilön nimi on {self.name} ja ikä on {self.age}'
+        return f'Address: {self._address}\nCity: {self._city}\nPhone: {self._phone_number}'
